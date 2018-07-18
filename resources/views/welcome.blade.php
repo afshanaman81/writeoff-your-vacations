@@ -18,15 +18,13 @@
                 background-color: #fff;
                 color: #636b6f;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                width: 100vw;
+                font-weight: 100;                            
                 margin: 0 !important;
                
             }
 
             .full-height {
-                height: 100vh; 
+                min-height: 100vh; 
                 width: 50vw;
                 margin: 1vh auto; 
                 z-index: 1000;         
@@ -106,8 +104,8 @@
                         <a href="https://laravel.com/docs">Other Tutorials</a>
                         <a href="https://laracasts.com">List of Destinations</a>
                         <a href="https://laravel-news.com">My Referal Program</a>
-                        <a href="https://forge.laravel.com">Forge</a>
-                        <a href="https://github.com/laravel/laravel">GitHub</a>
+                        <a href="https://forge.laravel.com">DreamVacation</a>
+                        <a href="https://github.com/laravel/laravel">Contact Me</a>
                     </div>
 
                     <div class="vue-component">
