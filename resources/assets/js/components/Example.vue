@@ -17,13 +17,20 @@
                             <h4>{{currentQuestion.proposition}} </h4>
                         </span>
 
-                        <span v-if="currentQuestion.taxExcerpt" >
-                            <p class="taxExcerpt">{{currentQuestion.taxExcerpt}} </p>
+                        <span v-if="currentQuestion.taxExcerpt" >                            
+                            <p class="taxExcerpt">
+                                <span v-if="currentQuestion.taxExcerpt.heading1" class="text-bold">{{currentQuestion.taxExcerpt.heading1}}</span><br/>
+                                <span v-if="currentQuestion.taxExcerpt.heading2" class="text-bold">{{currentQuestion.taxExcerpt.heading2}}</span>
+                                {{currentQuestion.taxExcerpt.text}} 
+                            </p>
+                            <span v-if="currentQuestion.taxExcerpt.link" class="text-center">
+                                <a :href="currentQuestion.taxExcerpt.link" target="_blank">{{currentQuestion.taxExcerpt.link}}</a>
+                            </span>
                         </span>
 
                         <div id="answers" class="row text-center">
                             <div v-for="option in currentQuestion.answers" class="col-md"> 
-                                <button v-if="option.goto != 0" type="button" class="btn btn-sm btn-dark uniform-width" 
+                                <button v-if="option.goto !== 0" type="button" class="btn btn-sm btn-dark uniform-width" 
                                     :class="{'btn-outline-success': option.choice == 'Yes',
                                              'btn-outline-warning': option.choice == 'No',
                                              'btn-outline-info': option.choice == 'More',
@@ -80,7 +87,7 @@
                 console.log(option)
                 this.questionIndex = option.goto - 1
                 this.currentQuestion = this.questions[this.questionIndex]
-                //console.log(this.currentQuestion)
+                console.log(this.currentQuestion)
             }
         }
     }
