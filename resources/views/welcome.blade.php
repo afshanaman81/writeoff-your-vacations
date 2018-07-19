@@ -102,9 +102,9 @@
 
                     <div class="links">
                         <a href="https://laravel.com/docs">Other Tutorials</a>
-                        <a href="https://laracasts.com">List of Destinations</a>
+                        <a href="https://www.dreamtrips.com/trips/?filter=feature" target="_blank">List of Destinations</a>
                         <a href="https://laravel-news.com">My Referal Program</a>
-                        <a href="https://forge.laravel.com">DreamVacation</a>
+                        <a href="https://www.dreamtrips.com/" target="_blank">DreamTrips&trade;</a>
                         <a href="https://github.com/laravel/laravel">Contact Me</a>
                     </div>
 

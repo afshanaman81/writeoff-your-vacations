@@ -8,22 +8,26 @@
 	},
 	{
 		"question":"Did you know the most effective way to minimize your taxes is to own a small business?",
-		"description": "Taxes are your largest expense in life. Taxes take up 25% to 50% of your entire life’s income (including sales, property, gas, etc.) It is NOT House, food, vacations, or medical.",
+		"description": "Taxes are your largest expense in life. Taxes take up 25% to 50% of your entire life’s income (including sales, property, gas, etc.). It is NOT House, food, vacations, or medical.",
 		"answers":[
 			{"choice": "Yes", "goto": 3},
 			{"choice": "No",  "goto": 3}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	
 	},
 	{
 		"question":"Do you currently receive 53.5¢ for every business mile you drive?",
 		"description":"For example ($ On a round-trip to):\n Yellowstone   543mi = $581 deduction \nLittle Rock AR 1000mi = $1070 deduction \n San Diego CA  1084 = $ 1165 deduction",
+		"question2":"Can you currently write-off/deduct part of your mortgage/rent? Your cell phone bill? Airfares, hotels, vacations? ",
 		"answers":[
 			{"choice": "Yes", "goto": 4},
 			{"choice": "No",  "goto": 4}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"attachment":"images/slide3.jpg",
+		"taxExcerpt":"Tax Code Publication 463:  Standard mileage rate. For 2017, the standard mileage rate for the cost of operating your car for business use is 53.5 cents (0.535) per mile. Car expenses and use of the standard mileage rate are explained in chapter 4.",
+		"taxLink":"https://www.irs.gov/pub/irs-pdf/p463.pdf",
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	
 	},
 	{
@@ -32,7 +36,7 @@
 			{"choice": "Yes", "goto": 5},
 			{"choice": "No",  "goto": 17}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
 		"question":"Does your vacations currently qualify for a TAX- Write-off/Deduction?",
@@ -40,31 +44,31 @@
 			{"choice": "Yes", "goto": 6},
 			{"choice": "No",  "goto": 6}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
-		"question":"Does you have a small business?",
+		"question":"Do you have a small business?",
 		"answers":[
 			{"choice": "Yes", "goto": 7},
 			{"choice": "No",  "goto": 7}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
-		"question":"In order to make your vacations a tax write-off / deduction you NEED to have a small business!",
-		"description": "(When your business is in the vacation/travel industry you are taking advantages of tax write-offs/ deduction created for Traveling Sales businessman and Travel Agents)",
+		"question":"In order to make your vacations a tax write-off/deduction you NEED to have a small business!",
+		"description": "(When your business is in the vacation/travel industry you are taking advantages of tax write-offs/deduction created for Traveling Sales people and Travel Agents)",
 		"answers":[
 			{"choice": "More", "goto": 8}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
 		"question":"Are you going anywhere on vacation this summer?",
 		"answers":[
 			{"choice": "Yes", "goto": 9},
-			{"choice": "No",  "goto": 0}
+			{"choice": "No",  "goto": 18}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
 		"question":"How much will that vacation cost?",
@@ -73,48 +77,52 @@
 			{"choice": "~ $8,000",  "goto": 11},
 			{"choice": "~ $10,000",  "goto": 12}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
 		"question":"For a Vacation Costing around $4,000 ...",
 		"description":"$4,000 x 22% Tax Bracket =  $880 \n  $4,000 x 35% Tax Bracket =  $1,400",
+		"proposition": "Now you have money on the table. If you do NOT have a small business, then you cannot get that money back, which costs you and your family real cash money. I believe YOU can spend your money better than the government can.",
 		"answers":[
 			{"choice": "More", "goto": 13}		
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
 		"question":"For a Vacation Costing around $8,000 ...",
-		"description":"$4,000 x 22% Tax Bracket =  $880 \n  $4,000 x 35% Tax Bracket =  $1,400",
+		"description":"$8,000 x 22% Tax Bracket =  $1,760 \n  $8,000 x 35% Tax Bracket =  $2,800",
+		"proposition": "Now you have money on the table. If you do NOT have a small business, then you cannot get that money back, which costs you and your family real cash money. I believe YOU can spend your money better than the government can.",
 		"answers":[
 			{"choice": "More", "goto": 13}		
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
 		"question":"For a Vacation Costing around $10,000 ...",
-		"description":"$4,000 x 22% Tax Bracket =  $880 \n  $4,000 x 35% Tax Bracket =  $1,400",
+		"description":"$10,000 x 22% Tax Bracket =  $2,200 \n  $10,000 x 35% Tax Bracket =  $3,500",
+		"proposition": "Now you have money on the table. If you do NOT have a small business, then you cannot get that money back, which costs you and your family real cash money. I believe YOU can spend your money better than the government can.",
 		"answers":[
 			{"choice": "More", "goto": 13}		
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
-		"question":"If your next vacation costs $10,000 and qualified as a business expense & for a TAX write-off/ deduction, would you like to make from $2,500-$4,000 in cash back from the IRS. No matter how you booked it?",
+		"question":"If your next vacation costs $10,000 and qualified as a business expense & for a TAX write-off/deduction, would you like to make from $2,500-$4,000 in cash back from the IRS. No matter how you booked it?",
 		"answers":[
 			{"choice": "Yes", "goto": 14},
 			{"choice": "No",  "goto": 14}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
 		"question":"Do you know 6-10 other people that are going on a vacation this year? Would they also like to make that vacation qualify for a tax write-off/deduction, and also save 25%-40% on the price of that vacation?",
-		"description":"We have a program that makes you a Wholesale Vacation Consultant ...",
+		"description":"We have a program that makes you a Wholesale Vacation Consultant. \nThis allows you to take advantage of deductions for small business from Publication 463 (2017), Travel, Entertainment, Gift, and Car Expenses.\nThese specific deductions were created for Travel Agents and Business-people. \n When you join our program and follow our steps, you can then write-off your vacations.",
 		"answers":[
 			{"choice": "Yes", "goto": 15},
 			{"choice": "No",  "goto": 17}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxExcerpt": "Who should use this publication. You should read this publication if you are an employee or a sole proprietor who has business-related travel, entertainment, gift, or transportation expenses.",
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
 		"question":"What to say to fellow vacationers, to get new business?",
@@ -122,21 +130,29 @@
 		"answers":[
 			{"choice": "Next", "goto": 16}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
 		"question":"Would you like to make your current or future vacations a tax write-off?",
 		"answers":[
 			{"choice": "Yes, Contact the Person", "goto": 0},
-			{"choice": "Yes, enroll online",  "goto": 0}
+			{"choice": "Yes, enroll online",  "goto": 0, "link": "https://www.dreamtrips.com/Marketing/becomemember"}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
 	{
 		"question":"Looks like our program might not be a good fit for you. However, if you want to start over on the first page of the website, just click here.",
 		"answers":[
 			{"choice": "Start Over", "goto": 1}
 		],
-		"tax-disclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+	},
+	{
+		"question":"Oh, why not? Maybe, we can help!",
+		"answers":[
+			{"choice": "Contact the Person", "goto": 0},
+			{"choice": "Enroll online",  "goto": 0, "link": "https://www.dreamtrips.com/Marketing/becomemember"}
+		],
+		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	}
 ]

@@ -2,34 +2,54 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h2>Does your Vacation qualify for a Tax write off?</h2>
-                    </div>
+                <div class="panel-body">
+                    <div id="question">
+                        <h2>{{currentQuestion.question}}</h2>
+                        <span v-if="currentQuestion.description">
+                            <pre class="description">{{currentQuestion.description}}</pre>
+                        </span>
 
-                    <div class="panel-body">
-                        <div id="question">
-                            <h5 class="text-left">{{currentQuestion.question}}</h5>
-                            <span v-if="currentQuestion.description">
-                                <pre class="description">{{currentQuestion.description}}</pre>
-                            </span>
-                            <div id="answers" class="row text-center">
-                                <div v-for="option in currentQuestion.answers" class="col-md"> 
-                                    <button type="button" class="btn btn-sm btn-dark uniform-width" 
-                                        :class="{'btn-outline-success': option.choice == 'Yes',
-                                                 'btn-outline-warning': option.choice == 'No',
-                                                 'btn-outline-info': option.choice == 'More',
-                                                 'btn-outline-primary': option.choice == 'Next',
-                                                 'btn-outline-dark': option.choice == 'Start Over'
-                                                }"
-                                        @click="action(option)">{{option.choice}}
-                                    </button>
-                                </div>
+                        <span v-if="currentQuestion.question2" class="question2">
+                            <h4>{{currentQuestion.question2}} </h4>
+                        </span>
+
+                        <span v-if="currentQuestion.proposition" class="proposition">
+                            <h4>{{currentQuestion.proposition}} </h4>
+                        </span>
+
+                        <span v-if="currentQuestion.taxExcerpt" >
+                            <p class="taxExcerpt">{{currentQuestion.taxExcerpt}} </p>
+                        </span>
+
+                        <div id="answers" class="row text-center">
+                            <div v-for="option in currentQuestion.answers" class="col-md"> 
+                                <button v-if="option.goto != 0" type="button" class="btn btn-sm btn-dark uniform-width" 
+                                    :class="{'btn-outline-success': option.choice == 'Yes',
+                                             'btn-outline-warning': option.choice == 'No',
+                                             'btn-outline-info': option.choice == 'More',
+                                             'btn-outline-primary': option.choice == 'Next',
+                                             'btn-outline-dark': option.choice == 'Start Over'
+                                            }"
+                                    @click.prevent="action(option)">{{option.choice}}
+                                </button>
+                                <a v-else class="btn btn-sm btn-dark uniform-width" 
+                                    :class="{'btn-outline-success': option.choice == 'Yes',
+                                             'btn-outline-warning': option.choice == 'No',
+                                             'btn-outline-info': option.choice == 'More',
+                                             'btn-outline-primary': option.choice == 'Next',
+                                             'btn-outline-dark': option.choice == 'Start Over'
+                                            }"
+                                    :href="option.link" target="_blank">{{option.choice}}
+                                </a>
                             </div>
                         </div>
 
-                    </div>                
-                </div>
+                        <p v-if="currentQuestion.taxDisclaimer" class="taxDisclaimer text-left">
+                            <span class="text-bold">TAX DISCLAIMER:</span> {{currentQuestion.taxDisclaimer}} 
+                        </p>
+                    </div>
+
+                </div>                       
             </div>
         </div>
     </div>
@@ -47,12 +67,12 @@
         },
         mounted() {          
             this.questions = questions
-            console.log(this.questions)
+            //console.log(this.questions)
 
             this.questionIndex = 0
             this.currentQuestion = this.questions[this.questionIndex]
 
-            console.log(this.currentQuestion)
+            //console.log(this.currentQuestion)
 
         },
         methods:{
@@ -60,7 +80,7 @@
                 console.log(option)
                 this.questionIndex = option.goto - 1
                 this.currentQuestion = this.questions[this.questionIndex]
-                console.log(this.currentQuestion)
+                //console.log(this.currentQuestion)
             }
         }
     }
@@ -70,6 +90,9 @@
     #answers,
     #question{
         margin: 5vh auto;
+    }
+    #answers a{
+        color: white;
     }
 
     .description{
@@ -86,4 +109,22 @@
         word-wrap: break-word;       /* Internet Explorer 5.5+ */
     }
 
+    .taxExcerpt{
+        width: 70%;
+        margin: 1vh auto;
+        padding: 3vh;
+        background: skyblue;
+        color: black;
+        border: 1px solid;
+        border-radius: 3px;
+    }
+    .taxDisclaimer{
+       color: yellow;
+       background: darkgrey;
+       font-size: smaller; 
+       padding: 1vh;
+    }
+    .text-bold{
+        font-weight: bold;
+    }
 </style>
