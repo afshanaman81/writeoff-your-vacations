@@ -29,7 +29,7 @@
                         </span>
 
                         <div id="answers" class="row text-center">
-                            <div v-for="option in currentQuestion.answers" class="col-sm-6 col-lg-6 form-group"> 
+                            <div v-for="option in currentQuestion.answers" class="col-sm col-md col-lg form-group"> 
                                 <button v-if="option.goto !== 0" type="button" class="btn btn-sm uniform-width" 
                                     :class="{'btn-success': option.choice == 'Yes',
                                              'btn-warning': option.choice == 'No',

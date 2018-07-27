@@ -78,7 +78,7 @@
 }
 @media only screen and (min-width: 1280px)  and (orientation: landscape){
     img{
-		height: 60vh;
+		height: 50vh;
 	}
 }
 

@@ -46,7 +46,7 @@ html, body {
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
-    z-index: 2000;
+    text-align: center;
 }
 
 .m-b-md {
@@ -64,6 +64,13 @@ html, body {
     width: 11vw;
 }
 
+/*needed for the Collapsed Nav Bar's dropdown*/
+.collapse.in {        
+      display: block;       
+}
+.navbar{
+    width: 100%;
+}
 
 /*********** iPhones and SmartPhones ******************/
 @media only screen and (max-width: 740px) {
@@ -72,6 +79,7 @@ html, body {
         margin-top: 5vh;
         font-size: 33px;
     }
+    .links >a {text-align: left;}
     .uniform-width{width: 45vw;}
     h2{font-size: 1.5rem;}
 }
@@ -92,10 +100,16 @@ html, body {
         margin-top: 5vh;
         font-size: 50px;
     }
+    .links >a {text-align: left;}
     .uniform-width{width: 27vw;}
 }
 @media only screen and (min-width: 768px) and (orientation: landscape) {
     .uniform-width{width: 20vw;}
+    .links >a {text-align: center;}
+}
+
+@media only screen and (min-width: 1024px) {
+    .links >a {text-align: center;}
 }
 
 /* Laptops (1280) */
@@ -103,9 +117,11 @@ html, body {
     .full-height {width: 65vw;}
     .title { font-size: 44px;}
     .uniform-width{width: 15vw;}  
+
 }
 @media only screen and (min-width: 1280px)  and (orientation: landscape){
-    
+    .uniform-width{width: 15vw;}
+
 }
 
 /* other laptops */
@@ -115,7 +131,7 @@ html, body {
     .uniform-width{width: 15vw;}
 }
 @media only screen and (min-width: 1440px)  and (orientation: landscape){
-    
+
 }
 
 /* desktops- wide screen */
@@ -123,6 +139,7 @@ html, body {
     .full-height {width: 50vw;}
     .title { font-size: 44px;}
     .uniform-width{width: 11vw;}
+
 }
 @media only screen and (min-width: 1900px)  and (orientation: landscape){
    

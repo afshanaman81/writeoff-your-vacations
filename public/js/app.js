@@ -43797,7 +43797,7 @@ var render = function() {
               _vm._l(_vm.currentQuestion.answers, function(option) {
                 return _c(
                   "div",
-                  { staticClass: "col-sm-6 col-lg-6 form-group" },
+                  { staticClass: "col-sm col-md col-lg form-group" },
                   [
                     option.goto !== 0
                       ? _c(
@@ -43967,7 +43967,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n#background-image[data-v-baaf8fb4]{\n\t\t/* BOX MODEL */\n\t\tz-index: 0;\n\n\t\t/* ENHANCEMENT */\n\t\tbackground-position: center center;\n\t\tbackground-size: cover;\n\t\tbackground-repeat: no-repeat;\n}\nimg[data-v-baaf8fb4]{\n\t\twidth: 100%;\n\t\theight: 50vh;\n}\n\n\t/*********** iPhones and SmartPhones ******************/\n@media only screen and (max-width: 740px) {\nimg[data-v-baaf8fb4]{\n\t\theight: 30vh;\n}\n}\n@media only screen and (max-width: 740px) and (orientation: landscape) {\nimg[data-v-baaf8fb4]{\n\t\theight: 75vh;\n}\n}\n\n\n/*********** Device = Tablets, Ipads (portrait)*/\n@media only screen and (min-width: 768px) {\nimg[data-v-baaf8fb4]{\n\t\theight: 40vh;\n}\n}\n@media only screen and (min-width: 768px) and (orientation: landscape) {\nimg[data-v-baaf8fb4]{\n\t\theight: 70vh;\n}\n}\n\n/* Laptops (1280) */\n@media only screen and (min-width: 1280px) {\nimg[data-v-baaf8fb4]{\n\t\theight: 80vh;\n}\n}\n@media only screen and (min-width: 1280px)  and (orientation: landscape){\nimg[data-v-baaf8fb4]{\n\t\theight: 60vh;\n}\n}\n\n/* other laptops */\n@media only screen and (min-width: 1440px) {\n}\n@media only screen and (min-width: 1440px)  and (orientation: landscape){\n}\n\n/* desktops- wide screen */\n@media only screen and (min-width: 1900px) {\nimg[data-v-baaf8fb4]{\n\t\twidth: 100%;\n\t\theight: 50vh;\n}\n}\n@media only screen and (min-width: 1900px)  and (orientation: landscape){\n}\n\n\n", ""]);
+exports.push([module.i, "\n#background-image[data-v-baaf8fb4]{\n\t\t/* BOX MODEL */\n\t\tz-index: 0;\n\n\t\t/* ENHANCEMENT */\n\t\tbackground-position: center center;\n\t\tbackground-size: cover;\n\t\tbackground-repeat: no-repeat;\n}\nimg[data-v-baaf8fb4]{\n\t\twidth: 100%;\n\t\theight: 50vh;\n}\n\n\t/*********** iPhones and SmartPhones ******************/\n@media only screen and (max-width: 740px) {\nimg[data-v-baaf8fb4]{\n\t\theight: 30vh;\n}\n}\n@media only screen and (max-width: 740px) and (orientation: landscape) {\nimg[data-v-baaf8fb4]{\n\t\theight: 75vh;\n}\n}\n\n\n/*********** Device = Tablets, Ipads (portrait)*/\n@media only screen and (min-width: 768px) {\nimg[data-v-baaf8fb4]{\n\t\theight: 40vh;\n}\n}\n@media only screen and (min-width: 768px) and (orientation: landscape) {\nimg[data-v-baaf8fb4]{\n\t\theight: 70vh;\n}\n}\n\n/* Laptops (1280) */\n@media only screen and (min-width: 1280px) {\nimg[data-v-baaf8fb4]{\n\t\theight: 80vh;\n}\n}\n@media only screen and (min-width: 1280px)  and (orientation: landscape){\nimg[data-v-baaf8fb4]{\n\t\theight: 50vh;\n}\n}\n\n/* other laptops */\n@media only screen and (min-width: 1440px) {\n}\n@media only screen and (min-width: 1440px)  and (orientation: landscape){\n}\n\n/* desktops- wide screen */\n@media only screen and (min-width: 1900px) {\nimg[data-v-baaf8fb4]{\n\t\twidth: 100%;\n\t\theight: 50vh;\n}\n}\n@media only screen and (min-width: 1900px)  and (orientation: landscape){\n}\n\n\n", ""]);
 
 // exports
 
