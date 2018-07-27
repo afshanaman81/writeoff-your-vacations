@@ -120,7 +120,7 @@
 	},
 	{
 		"question":"Do you know 6-10 other people that are going on a vacation this year? Would they also like to make that vacation qualify for a tax write-off/deduction, and also save 25%-40% on the price of that vacation?",
-		"description":"We have a program that makes you a Wholesale Vacation Consultant. \nThis allows you to take advantage of deductions for small business from Publication 463 (2017), Travel, Entertainment, Gift, and Car Expenses.\nThese specific deductions were created for Travel Agents and Business people.",
+		"description":"We have a program that enables you to be a Wholesale Vacation Consultant. \nThis allows you to take advantage of deductions for small business from Publication 463 (2017), Travel, Entertainment, Gift, and Car Expenses.\nThese specific deductions were created for Travel Agents and Business people.",
 		"answers":[
 			{"choice": "Yes", "goto": 15},
 			{"choice": "No",  "goto": 21}

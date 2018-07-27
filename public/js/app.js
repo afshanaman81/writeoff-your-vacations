@@ -43555,7 +43555,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n#answers[data-v-b6ebd97a],\n#question[data-v-b6ebd97a]{\n    margin: 5vh auto;\n}\n#answers a[data-v-b6ebd97a]{\n    color: white;\n}\n.description[data-v-b6ebd97a]{\n    color: red;\n    font-style: italic;\n    font-size: 14px;\n    overflow-x: hidden;\n}\npre[data-v-b6ebd97a] {\n    white-space: pre-wrap;       /* css-3 */\n    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */\n    white-space: -pre-wrap;      /* Opera 4-6 */\n    white-space: -o-pre-wrap;    /* Opera 7 */\n    word-wrap: break-word;       /* Internet Explorer 5.5+ */\n}\n.taxExcerpt[data-v-b6ebd97a]{\n    width: 70%;\n    margin: 1vh auto;\n    padding: 3vh;\n    background: skyblue;\n    color: black;\n    border: 1px solid;\n    border-radius: 3px;\n}\n.taxDisclaimer[data-v-b6ebd97a]{\n   color: yellow;\n   background: darkgrey;\n   font-size: smaller; \n   padding: 1vh;\n}\n.text-bold[data-v-b6ebd97a]{\n    font-weight: bold;\n}\n", ""]);
+exports.push([module.i, "\n#answers[data-v-b6ebd97a],\n    #question[data-v-b6ebd97a]{\n        margin: 5vh auto;\n}\n#answers a[data-v-b6ebd97a]{\n        color: white;\n}\n.description[data-v-b6ebd97a]{\n        color: red;\n        font-style: italic;\n        font-size: 14px;\n        overflow-x: hidden;\n}\npre[data-v-b6ebd97a] {\n        white-space: pre-wrap;       /* css-3 */\n        white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */\n        white-space: -pre-wrap;      /* Opera 4-6 */\n        white-space: -o-pre-wrap;    /* Opera 7 */\n        word-wrap: break-word;       /* Internet Explorer 5.5+ */\n}\n.taxExcerpt[data-v-b6ebd97a]{\n        width: 70%;\n        margin: 1vh auto;\n        padding: 3vh;\n        background: skyblue;\n        color: black;\n        border: 1px solid;\n        border-radius: 3px;\n}\n.taxDisclaimer[data-v-b6ebd97a]{\n       color: yellow;\n       background: darkgrey;\n       font-size: smaller; \n       padding: 1vh;\n}\n.text-bold[data-v-b6ebd97a]{\n        font-weight: bold;\n}\n\n\n\n/*********** iPhones and SmartPhones ******************/\n@media only screen and (max-width: 740px) {\n}\n@media only screen and (max-width: 740px) and (orientation: landscape) {\n}\n\n\n/*********** Device = Tablets, Ipads (portrait)*/\n@media only screen and (min-width: 768px) {\n}\n@media only screen and (min-width: 768px) and (orientation: landscape) {\n}\n\n/* Laptops (1280) */\n@media only screen and (min-width: 1280px) {\n}\n@media only screen and (min-width: 1280px)  and (orientation: landscape){\n}\n\n/* other laptops */\n@media only screen and (min-width: 1440px) {\n}\n@media only screen and (min-width: 1440px)  and (orientation: landscape){\n}\n\n/* desktops- wide screen */\n@media only screen and (min-width: 1900px) {\n}\n@media only screen and (min-width: 1900px)  and (orientation: landscape){\n}\n\n\n", ""]);
 
 // exports
 
@@ -43663,6 +43663,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 var questions = __webpack_require__(46);
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -43670,7 +43672,8 @@ var questions = __webpack_require__(46);
         return {
             questions: [],
             questionIndex: 0,
-            currentQuestion: {}
+            currentQuestion: {},
+            classBtnDark: false
         };
     },
     mounted: function mounted() {
@@ -43685,10 +43688,17 @@ var questions = __webpack_require__(46);
 
     methods: {
         action: function action(option) {
-            console.log(option);
+            var _this = this;
+
+            //console.log(option)
+            this.classBtnDark = false;
             this.questionIndex = option.goto - 1;
             this.currentQuestion = this.questions[this.questionIndex];
-            console.log(this.currentQuestion);
+            //console.log(this.currentQuestion.answers)
+            var knownAnswers = ['Yes', 'No', 'More', 'Next', 'Start Over'];
+            this.currentQuestion.answers.forEach(function (answer) {
+                if (knownAnswers.indexOf(answer.choice) === -1) _this.classBtnDark = true;
+            });
         }
     }
 });
@@ -43697,7 +43707,7 @@ var questions = __webpack_require__(46);
 /* 46 */
 /***/ (function(module, exports) {
 
-module.exports = [{"question":"In America, Do you know what your number one expense in life is?","answers":[{"choice":"Yes","goto":2},{"choice":"No","goto":2}]},{"question":"Taxes are your largest expense in life. Taxes take up 25% to 50% of your entire life’s income (including sales, property, gas, etc.). It is NOT House, food, vacations, or medical.","description":"Did you know the most effective way to minimize your taxes is to own a small business?","answers":[{"choice":"Yes","goto":3},{"choice":"No","goto":3}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Do you currently receive 53.5¢ for every business mile you drive?","description":"For example ($ On a round-trip to):\n Yellowstone   543mi = $581 deduction \nLittle Rock AR 1000mi = $1070 deduction \n San Diego CA  1084 = $ 1165 deduction","question2":"Can you currently write-off/deduct part of your mortgage/rent? Your cell phone bill? Airfares, hotels, vacations? ","answers":[{"choice":"Yes","goto":4},{"choice":"No","goto":4}],"attachment":"images/slide3.jpg","taxExcerpt":{"heading1":"Tax Code Publication 463","heading2":"Standard Mileage Rate:","text":"For 2017, the standard mileage rate for the cost of operating your car for business use is 53.5 cents (0.535) per mile. Car expenses and use of the standard mileage rate are explained in chapter 4.","link":"https://www.irs.gov/pub/irs-pdf/p463.pdf"},"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Do you like to go on Vacations?","answers":[{"choice":"Yes","goto":5},{"choice":"No","goto":21}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Does your vacations currently qualify for a TAX- Write-off/Deduction?","answers":[{"choice":"Yes","goto":6},{"choice":"No","goto":6}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Do you have a small business?","answers":[{"choice":"Yes","goto":7},{"choice":"No","goto":7}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"In order to make your vacations a tax write-off/deduction, you NEED to have a small business!","description":"(When your business is in the vacation/travel industry you are taking advantages of tax write-offs/deduction created for Traveling Sales people and Travel Agents)","answers":[{"choice":"More","goto":8}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Are you going anywhere on vacation this summer?","answers":[{"choice":"Yes","goto":9},{"choice":"No","goto":22}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"How much will that vacation cost?","answers":[{"choice":"~ $4,000","goto":10},{"choice":"~ $8,000","goto":11},{"choice":"~ $10,000","goto":12}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"For a Vacation Costing around $4,000, your tax write-off is:","description":"$4,000 x 22% Tax Bracket =  $880 \n $4,000 x 35% Tax Bracket =  $1,400","proposition":"Now you have money on the table. If you do NOT have a small business, then you cannot get that money back, which costs you and your family real cash money. I believe YOU can spend your money better than the government can.","answers":[{"choice":"More","goto":13}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"For a Vacation Costing around $8,000, your tax write-off is:","description":"$8,000 x 22% Tax Bracket =  $1,760 \n $8,000 x 35% Tax Bracket =  $2,800","proposition":"Now you have money on the table. If you do NOT have a small business, then you cannot get that money back, which costs you and your family real cash money. I believe YOU can spend your money better than the government can.","answers":[{"choice":"More","goto":13}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"For a Vacation Costing around $10,000, your tax write-off is:","description":"$10,000 x 22% Tax Bracket =  $2,200 \n $10,000 x 35% Tax Bracket =  $3,500","proposition":"Now you have money on the table. If you do NOT have a small business, then you cannot get that money back, which costs you and your family real cash money. I believe YOU can spend your money better than the government can.","answers":[{"choice":"More","goto":13}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"If your next vacation costs $10,000 and qualified as a business expense & for a TAX write-off/deduction, would you like to make from $2,500-$4,000 in cash back from the IRS. No matter how you booked it?","answers":[{"choice":"Yes","goto":14},{"choice":"No","goto":21}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Do you know 6-10 other people that are going on a vacation this year? Would they also like to make that vacation qualify for a tax write-off/deduction, and also save 25%-40% on the price of that vacation?","description":"We have a program that makes you a Wholesale Vacation Consultant. \nThis allows you to take advantage of deductions for small business from Publication 463 (2017), Travel, Entertainment, Gift, and Car Expenses.\nThese specific deductions were created for Travel Agents and Business people.","answers":[{"choice":"Yes","goto":15},{"choice":"No","goto":21}],"taxExcerpt":{"heading1":"Who should use this publication?","text":"You should read this publication if you are an employer or a sole proprietor who has business-related travel, entertainment, gift, or transportation expenses."},"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"When you join our program and follow our steps, you can then write-off your vacations. How can you do this?","description":"When 4 people join our program, you just made all the money back that it cost to join, and you should qualify for a bonus (LSB1). As a result you are a profitable business [from the IRS’s perspective]","answers":[{"choice":"Next","goto":16}]},{"question":"Therefore, you can deduct small business expenses - like going on familiarization trips for your vacation business! ","description":"In order to make a vacation a tax write-off/ deduction, it must be a business trip. According to IRS tax code Publication 463, you must do a positive business building activity every day and a half to qualify. \n\n Therefore when you are a Wholesale Vacation Consultant, every trip is a business trip because you are getting familiar with and evaluating for your future clientele. Here is how that is easily accomplished.","answers":[{"choice":"Next","goto":17}]},{"question":"Engage your fellow vacationers ...","description":"Sample Conversation for when you’re on vacation: \n  1) Start a conversation with a fellow vacationer.\n  2) Say I have a crazy question for you, `Is this vacation a tax write-off for you?`\n3) When they say “No” say “All my vacations are!” then be silent.\n4) Eventually, they will ask, “How?”, then you can explain.","answers":[{"choice":"Next","goto":18}]},{"question":"So why do the conversation?","description":"You just did a building activity in promoting your business. They enroll in the program, which is new business for you. \nEven if they don’t enroll, you still tried. You are not responsible for outcome, just effort!","answers":[{"choice":"Next","goto":19}],"taxExcerpt":{"heading1":"Tax Code Publication 463","heading2":"Associated with trade or business","text":"Generally, an expense is associated with the active conduct of your trade or business if you can show that you had a clear business purpose for having the expense. The purpose may be to get new business or to encourage the continuation of an existing business relationship."},"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Or ...","answers":[{"choice":"Next","goto":20}],"taxExcerpt":{"heading1":"Tax Code Publication 463","heading2":"Substantial business discussion","text":"Whether a business discussion is substantial depends on the facts of each case. A business discussion won’t be considered substantial unless you can show that you actively engaged in the discussion, meeting, negotiation, or other business transaction to get income or some other specific business benefit. \nThe meeting doesn’t have to be for any specified length of time, but you must show that the business discussion was substantial in relation to the meal or entertainment. It isn’t necessary that you devote more time to business than to entertainment. You don’t have to discuss business during the meal or entertainment."},"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Would you like to make your current or future vacations a tax write-off?","answers":[{"choice":"Yes, Contact the Person","goto":0},{"choice":"Yes, enroll online","goto":0,"link":"https://www.dreamtrips.com/Marketing/becomemember"},{"choice":"Start Over","goto":1}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Looks like our program might not be a good fit for you. However, if you want to start over on the first page of the website, just click here.","answers":[{"choice":"Start Over","goto":1}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Oh, why not? Maybe, we can help!","answers":[{"choice":"Contact the Person","goto":0},{"choice":"Enroll online","goto":0,"link":"https://www.dreamtrips.com/Marketing/becomemember"},{"choice":"Start Over","goto":1}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."}]
+module.exports = [{"question":"In America, Do you know what your number one expense in life is?","answers":[{"choice":"Yes","goto":2},{"choice":"No","goto":2}]},{"question":"Taxes are your largest expense in life. Taxes take up 25% to 50% of your entire life’s income (including sales, property, gas, etc.). It is NOT House, food, vacations, or medical.","description":"Did you know the most effective way to minimize your taxes is to own a small business?","answers":[{"choice":"Yes","goto":3},{"choice":"No","goto":3}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Do you currently receive 53.5¢ for every business mile you drive?","description":"For example ($ On a round-trip to):\n Yellowstone   543mi = $581 deduction \nLittle Rock AR 1000mi = $1070 deduction \n San Diego CA  1084 = $ 1165 deduction","question2":"Can you currently write-off/deduct part of your mortgage/rent? Your cell phone bill? Airfares, hotels, vacations? ","answers":[{"choice":"Yes","goto":4},{"choice":"No","goto":4}],"attachment":"images/slide3.jpg","taxExcerpt":{"heading1":"Tax Code Publication 463","heading2":"Standard Mileage Rate:","text":"For 2017, the standard mileage rate for the cost of operating your car for business use is 53.5 cents (0.535) per mile. Car expenses and use of the standard mileage rate are explained in chapter 4.","link":"https://www.irs.gov/pub/irs-pdf/p463.pdf"},"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Do you like to go on Vacations?","answers":[{"choice":"Yes","goto":5},{"choice":"No","goto":21}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Does your vacations currently qualify for a TAX- Write-off/Deduction?","answers":[{"choice":"Yes","goto":6},{"choice":"No","goto":6}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Do you have a small business?","answers":[{"choice":"Yes","goto":7},{"choice":"No","goto":7}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"In order to make your vacations a tax write-off/deduction, you NEED to have a small business!","description":"(When your business is in the vacation/travel industry you are taking advantages of tax write-offs/deduction created for Traveling Sales people and Travel Agents)","answers":[{"choice":"More","goto":8}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Are you going anywhere on vacation this summer?","answers":[{"choice":"Yes","goto":9},{"choice":"No","goto":22}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"How much will that vacation cost?","answers":[{"choice":"~ $4,000","goto":10},{"choice":"~ $8,000","goto":11},{"choice":"~ $10,000","goto":12}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"For a Vacation Costing around $4,000, your tax write-off is:","description":"$4,000 x 22% Tax Bracket =  $880 \n $4,000 x 35% Tax Bracket =  $1,400","proposition":"Now you have money on the table. If you do NOT have a small business, then you cannot get that money back, which costs you and your family real cash money. I believe YOU can spend your money better than the government can.","answers":[{"choice":"More","goto":13}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"For a Vacation Costing around $8,000, your tax write-off is:","description":"$8,000 x 22% Tax Bracket =  $1,760 \n $8,000 x 35% Tax Bracket =  $2,800","proposition":"Now you have money on the table. If you do NOT have a small business, then you cannot get that money back, which costs you and your family real cash money. I believe YOU can spend your money better than the government can.","answers":[{"choice":"More","goto":13}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"For a Vacation Costing around $10,000, your tax write-off is:","description":"$10,000 x 22% Tax Bracket =  $2,200 \n $10,000 x 35% Tax Bracket =  $3,500","proposition":"Now you have money on the table. If you do NOT have a small business, then you cannot get that money back, which costs you and your family real cash money. I believe YOU can spend your money better than the government can.","answers":[{"choice":"More","goto":13}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"If your next vacation costs $10,000 and qualified as a business expense & for a TAX write-off/deduction, would you like to make from $2,500-$4,000 in cash back from the IRS. No matter how you booked it?","answers":[{"choice":"Yes","goto":14},{"choice":"No","goto":21}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Do you know 6-10 other people that are going on a vacation this year? Would they also like to make that vacation qualify for a tax write-off/deduction, and also save 25%-40% on the price of that vacation?","description":"We have a program that enables you to be a Wholesale Vacation Consultant. \nThis allows you to take advantage of deductions for small business from Publication 463 (2017), Travel, Entertainment, Gift, and Car Expenses.\nThese specific deductions were created for Travel Agents and Business people.","answers":[{"choice":"Yes","goto":15},{"choice":"No","goto":21}],"taxExcerpt":{"heading1":"Who should use this publication?","text":"You should read this publication if you are an employee or a sole proprietor who has business-related travel, entertainment, gift, or transportation expenses."},"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"When you join our program and follow our steps, you can then write-off your vacations. How can you do this?","description":"When 4 people join our program, you just made all the money back that it cost to join, and you should qualify for a bonus (LSB1). As a result you are a profitable business [from the IRS’s perspective]","answers":[{"choice":"Next","goto":16}]},{"question":"Therefore, you can deduct small business expenses - like going on familiarization trips for your vacation business! ","description":"In order to make a vacation a tax write-off/ deduction, it must be a business trip. According to IRS tax code Publication 463, you must do a positive business building activity every day and a half to qualify. \n\n Therefore when you are a Wholesale Vacation Consultant, every trip is a business trip because you are getting familiar with and evaluating for your future clientele. Here is how that is easily accomplished.","answers":[{"choice":"Next","goto":17}]},{"question":"Engage your fellow vacationers ...","description":"Sample Conversation for when you’re on vacation: \n  1) Start a conversation with a fellow vacationer.\n  2) Say I have a crazy question for you, `Is this vacation a tax write-off for you?`\n3) When they say “No” say “All my vacations are!” then be silent.\n4) Eventually, they will ask, “How?”, then you can explain.","answers":[{"choice":"Next","goto":18}]},{"question":"So why do the conversation?","description":"You just did a building activity in promoting your business. They enroll in the program, which is new business for you. \nEven if they don’t enroll, you still tried. You are not responsible for outcome, just effort!","answers":[{"choice":"Next","goto":19}],"taxExcerpt":{"heading1":"Tax Code Publication 463","heading2":"Associated with trade or business","text":"Generally, an expense is associated with the active conduct of your trade or business if you can show that you had a clear business purpose for having the expense. The purpose may be to get new business or to encourage the continuation of an existing business relationship."},"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Or ...","answers":[{"choice":"Next","goto":20}],"taxExcerpt":{"heading1":"Tax Code Publication 463","heading2":"Substantial business discussion","text":"Whether a business discussion is substantial depends on the facts of each case. A business discussion won’t be considered substantial unless you can show that you actively engaged in the discussion, meeting, negotiation, or other business transaction to get income or some other specific business benefit. \nThe meeting doesn’t have to be for any specified length of time, but you must show that the business discussion was substantial in relation to the meal or entertainment. It isn’t necessary that you devote more time to business than to entertainment. You don’t have to discuss business during the meal or entertainment."},"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Would you like to make your current or future vacations a tax write-off?","answers":[{"choice":"Yes, Contact the Person","goto":0},{"choice":"Yes, enroll online","goto":0,"link":"https://www.dreamtrips.com/Marketing/becomemember"},{"choice":"Start Over","goto":1}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Looks like our program might not be a good fit for you. However, if you want to start over on the first page of the website, just click here.","answers":[{"choice":"Start Over","goto":1}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."},{"question":"Oh, why not? Maybe, we can help!","answers":[{"choice":"Contact the Person","goto":0},{"choice":"Enroll online","goto":0,"link":"https://www.dreamtrips.com/Marketing/becomemember"},{"choice":"Start Over","goto":1}],"taxDisclaimer":"You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."}]
 
 /***/ }),
 /* 47 */
@@ -43707,7 +43717,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container-fluid" }, [
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "panel-body" }, [
@@ -43785,55 +43795,61 @@ var render = function() {
               "div",
               { staticClass: "row text-center", attrs: { id: "answers" } },
               _vm._l(_vm.currentQuestion.answers, function(option) {
-                return _c("div", { staticClass: "col-md" }, [
-                  option.goto !== 0
-                    ? _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-sm btn-dark uniform-width",
-                          class: {
-                            "btn-outline-success": option.choice == "Yes",
-                            "btn-outline-warning": option.choice == "No",
-                            "btn-outline-info": option.choice == "More",
-                            "btn-outline-primary": option.choice == "Next",
-                            "btn-outline-dark": option.choice == "Start Over"
-                          },
-                          attrs: { type: "button" },
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.action(option)
+                return _c(
+                  "div",
+                  { staticClass: "col-sm-6 col-lg-6 form-group" },
+                  [
+                    option.goto !== 0
+                      ? _c(
+                          "button",
+                          {
+                            staticClass: "btn btn-sm uniform-width",
+                            class: {
+                              "btn-success": option.choice == "Yes",
+                              "btn-warning": option.choice == "No",
+                              "btn-info": option.choice == "More",
+                              "btn-primary": option.choice == "Next",
+                              "btn-outline-dark": option.choice == "Start Over",
+                              "btn-dark": _vm.classBtnDark
+                            },
+                            attrs: { type: "button" },
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                _vm.action(option)
+                              }
                             }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            _vm._s(option.choice) +
-                              "\n                            "
-                          )
-                        ]
-                      )
-                    : _c(
-                        "a",
-                        {
-                          staticClass: "btn btn-sm btn-dark uniform-width",
-                          class: {
-                            "btn-outline-success": option.choice == "Yes",
-                            "btn-outline-warning": option.choice == "No",
-                            "btn-outline-info": option.choice == "More",
-                            "btn-outline-primary": option.choice == "Next",
-                            "btn-outline-dark": option.choice == "Start Over"
                           },
-                          attrs: { href: option.link, target: "_blank" }
-                        },
-                        [
-                          _vm._v(
-                            _vm._s(option.choice) +
-                              "\n                            "
-                          )
-                        ]
-                      )
-                ])
+                          [
+                            _vm._v(
+                              _vm._s(option.choice) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                      : _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-sm uniform-width",
+                            class: {
+                              "btn-success": option.choice == "Yes",
+                              "btn-warning": option.choice == "No",
+                              "btn-info": option.choice == "More",
+                              "btn-primary": option.choice == "Next",
+                              "btn-outline-dark": option.choice == "Start Over",
+                              "btn-dark": _vm.classBtnDark
+                            },
+                            attrs: { href: option.link, target: "_blank" }
+                          },
+                          [
+                            _vm._v(
+                              _vm._s(option.choice) +
+                                "\n                            "
+                            )
+                          ]
+                        )
+                  ]
+                )
               })
             ),
             _vm._v(" "),
@@ -43951,7 +43967,7 @@ exports = module.exports = __webpack_require__(9)(false);
 
 
 // module
-exports.push([module.i, "\n#background-image[data-v-baaf8fb4]{\n\t/* BOX MODEL */\n\tz-index: 0;\n\n\t/* ENHANCEMENT */\n\tbackground-position: center center;\n\tbackground-size: cover;\n\tbackground-repeat: no-repeat;\n}\nimg[data-v-baaf8fb4]{\n\twidth: 100%;\n\theight: 50vh;\n}\n", ""]);
+exports.push([module.i, "\n#background-image[data-v-baaf8fb4]{\n\t\t/* BOX MODEL */\n\t\tz-index: 0;\n\n\t\t/* ENHANCEMENT */\n\t\tbackground-position: center center;\n\t\tbackground-size: cover;\n\t\tbackground-repeat: no-repeat;\n}\nimg[data-v-baaf8fb4]{\n\t\twidth: 100%;\n\t\theight: 50vh;\n}\n\n\t/*********** iPhones and SmartPhones ******************/\n@media only screen and (max-width: 740px) {\nimg[data-v-baaf8fb4]{\n\t\theight: 30vh;\n}\n}\n@media only screen and (max-width: 740px) and (orientation: landscape) {\nimg[data-v-baaf8fb4]{\n\t\theight: 75vh;\n}\n}\n\n\n/*********** Device = Tablets, Ipads (portrait)*/\n@media only screen and (min-width: 768px) {\nimg[data-v-baaf8fb4]{\n\t\theight: 40vh;\n}\n}\n@media only screen and (min-width: 768px) and (orientation: landscape) {\nimg[data-v-baaf8fb4]{\n\t\theight: 70vh;\n}\n}\n\n/* Laptops (1280) */\n@media only screen and (min-width: 1280px) {\nimg[data-v-baaf8fb4]{\n\t\theight: 80vh;\n}\n}\n@media only screen and (min-width: 1280px)  and (orientation: landscape){\nimg[data-v-baaf8fb4]{\n\t\theight: 60vh;\n}\n}\n\n/* other laptops */\n@media only screen and (min-width: 1440px) {\n}\n@media only screen and (min-width: 1440px)  and (orientation: landscape){\n}\n\n/* desktops- wide screen */\n@media only screen and (min-width: 1900px) {\nimg[data-v-baaf8fb4]{\n\t\twidth: 100%;\n\t\theight: 50vh;\n}\n}\n@media only screen and (min-width: 1900px)  and (orientation: landscape){\n}\n\n\n", ""]);
 
 // exports
 

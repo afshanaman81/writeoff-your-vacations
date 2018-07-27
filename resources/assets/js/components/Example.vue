@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="panel-body">
@@ -29,22 +29,24 @@
                         </span>
 
                         <div id="answers" class="row text-center">
-                            <div v-for="option in currentQuestion.answers" class="col-md"> 
-                                <button v-if="option.goto !== 0" type="button" class="btn btn-sm btn-dark uniform-width" 
-                                    :class="{'btn-outline-success': option.choice == 'Yes',
-                                             'btn-outline-warning': option.choice == 'No',
-                                             'btn-outline-info': option.choice == 'More',
-                                             'btn-outline-primary': option.choice == 'Next',
-                                             'btn-outline-dark': option.choice == 'Start Over'
+                            <div v-for="option in currentQuestion.answers" class="col-sm-6 col-lg-6 form-group"> 
+                                <button v-if="option.goto !== 0" type="button" class="btn btn-sm uniform-width" 
+                                    :class="{'btn-success': option.choice == 'Yes',
+                                             'btn-warning': option.choice == 'No',
+                                             'btn-info': option.choice == 'More',
+                                             'btn-primary': option.choice == 'Next',
+                                             'btn-outline-dark': option.choice == 'Start Over',
+                                             'btn-dark':classBtnDark
                                             }"
                                     @click.prevent="action(option)">{{option.choice}}
                                 </button>
-                                <a v-else class="btn btn-sm btn-dark uniform-width" 
-                                    :class="{'btn-outline-success': option.choice == 'Yes',
-                                             'btn-outline-warning': option.choice == 'No',
-                                             'btn-outline-info': option.choice == 'More',
-                                             'btn-outline-primary': option.choice == 'Next',
-                                             'btn-outline-dark': option.choice == 'Start Over'
+                                <a v-else class="btn btn-sm uniform-width" 
+                                    :class="{'btn-success': option.choice == 'Yes',
+                                             'btn-warning': option.choice == 'No',
+                                             'btn-info': option.choice == 'More',
+                                             'btn-primary': option.choice == 'Next',
+                                             'btn-outline-dark': option.choice == 'Start Over',
+                                             'btn-dark': classBtnDark
                                             }"
                                     :href="option.link" target="_blank">{{option.choice}}
                                 </a>
@@ -69,7 +71,8 @@
             return {
                 questions: [],
                 questionIndex: 0,
-                currentQuestion: {}
+                currentQuestion: {},
+                classBtnDark: false
             }
         },
         mounted() {          
@@ -84,10 +87,16 @@
         },
         methods:{
             action: function(option){
-                console.log(option)
+                //console.log(option)
+                this.classBtnDark = false
                 this.questionIndex = option.goto - 1
                 this.currentQuestion = this.questions[this.questionIndex]
-                console.log(this.currentQuestion)
+                //console.log(this.currentQuestion.answers)
+                const knownAnswers = ['Yes','No', 'More', 'Next', 'Start Over']
+                this.currentQuestion.answers.forEach(answer =>{                    
+                    if (knownAnswers.indexOf(answer.choice) === -1)
+                        this.classBtnDark = true
+                })
             }
         }
     }
@@ -134,4 +143,49 @@
     .text-bold{
         font-weight: bold;
     }
+
+
+
+/*********** iPhones and SmartPhones ******************/
+@media only screen and (max-width: 740px) {
+
+}
+@media only screen and (max-width: 740px) and (orientation: landscape) {
+
+}
+
+
+/*********** Device = Tablets, Ipads (portrait)*/
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+
+}
+
+/* Laptops (1280) */
+@media only screen and (min-width: 1280px) {
+  
+}
+@media only screen and (min-width: 1280px)  and (orientation: landscape){
+    
+}
+
+/* other laptops */
+@media only screen and (min-width: 1440px) {
+   
+}
+@media only screen and (min-width: 1440px)  and (orientation: landscape){
+    
+}
+
+/* desktops- wide screen */
+@media only screen and (min-width: 1900px) {
+    
+}
+@media only screen and (min-width: 1900px)  and (orientation: landscape){
+   
+}
+
+
 </style>
