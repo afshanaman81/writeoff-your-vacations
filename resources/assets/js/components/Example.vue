@@ -148,7 +148,9 @@
 
 /*********** iPhones and SmartPhones ******************/
 @media only screen and (max-width: 740px) {
-
+    .taxExcerpt{
+        width: 90%;
+    }
 }
 @media only screen and (max-width: 740px) and (orientation: landscape) {
 

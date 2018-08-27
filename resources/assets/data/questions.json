@@ -180,9 +180,8 @@
 	{
 		"question":"Would you like to make your current or future vacations a tax write-off?",
 		"answers":[
-			{"choice": "Yes, Contact the Person", "goto": 0},
-			{"choice": "Yes, enroll online",  "goto": 0, "link": "https://www.dreamtrips.com/Marketing/becomemember"},
-			{"choice": "Start Over", "goto": 1}
+			{"choice": "Yes", "goto": 23},
+			{"choice": "No",  "goto": 21}
 		],
 		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
 	},
@@ -196,10 +195,16 @@
 	{
 		"question":"Oh, why not? Maybe, we can help!",
 		"answers":[
-			{"choice": "Contact the Person", "goto": 0},
-			{"choice": "Enroll online",  "goto": 0, "link": "https://www.dreamtrips.com/Marketing/becomemember"},
-			{"choice": "Start Over", "goto": 1}
+			{"choice": "How?", "goto": 23}
 		],
 		"taxDisclaimer": "You agree that you are responsible for consulting your own tax advisor as to the tax consequences associated with your Option."
+	},
+	{
+		"question": "",
+		"description": "Please contact the person that sent you to this website. Thank you for watching!",
+		"answers":[
+			{"choice": "Got It!", "goto": 0},
+			{"choice": "Start Over", "goto": 1}
+		]
 	}
 ]

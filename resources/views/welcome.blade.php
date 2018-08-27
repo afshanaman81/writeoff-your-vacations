@@ -23,25 +23,23 @@
                         Write Off Your Vacations!
                     </div>
 
-<nav class="navbar navbar-expand-lg navbar-light">
-  <button class="navbar-toggler pull-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                      <button class="navbar-toggler pull-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    
-      <div class="links navbar-nav">
-        <a href="#">Other Tutorials</a>
-        <a href="https://www.dreamtrips.com/trips/?filter=feature" target="_blank">List of Destinations</a>
-        <a href="#">My Referal Program</a>
-        <a href="https://www.dreamtrips.com/" target="_blank">DreamTrips&trade;</a>
-        <a href="#">Contact Me</a>
-    </div>
-    
-  </div>
-</nav>
-
-                    
+                      <div class="collapse navbar-collapse" id="navbarNav">
+                        
+                          <div class="links navbar-nav">
+                            <a href="#">Other Tutorials</a>
+                            <a href="https://www.dreamtrips.com/trips/?filter=feature" target="_blank">List of Destinations</a>
+                            <a href="#">My Referal Program</a>
+                            <a hidden href="https://www.dreamtrips.com/" target="_blank">DreamTrips&trade;</a>
+                            <a href="#">Contact Me</a>
+                        </div>
+                        
+                      </div>
+                    </nav>
 
                     <div class="vue-component">
                         <background-image />
